@@ -1,16 +1,16 @@
 /** @format */
 
-import { createTheme, makeStyles, ThemeProvider } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { Fragment } from "react";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import Home from "./pages/Home";
-import { Route, Switch, useHistory } from "react-router-dom";
-import Login from "./pages/Login";
-import User from "./pages/User";
+import { createTheme, makeStyles, ThemeProvider } from "@material-ui/core"
+import Typography from "@material-ui/core/Typography"
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from "@material-ui/core/Toolbar"
+import CssBaseline from "@material-ui/core/CssBaseline"
+import { Fragment } from "react"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import Home from "./pages/Home"
+import { Route, Switch, useHistory } from "react-router-dom"
+import Login from "./pages/Login"
+import User from "./pages/User"
 
 const useStyles = makeStyles((theme) => {
 	return {
@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => {
 			marginRight: theme.spacing(2),
 		},
 		toolbar: theme.mixins.toolbar,
-	};
-});
+	}
+})
 
 const theme = createTheme({
 	palette: {
@@ -33,15 +33,15 @@ const theme = createTheme({
 			main: "#00e5ff",
 		},
 	},
-});
+})
 
 function App() {
-	const classes = useStyles();
-	const history = useHistory();
+	const classes = useStyles()
+	const history = useHistory()
 	const clearSearch = (e) => {
-		e.preventDefault();
-		history.push("/search");
-	};
+		e.preventDefault()
+		window.location.reload()
+	}
 	return (
 		<Fragment>
 			<CssBaseline />
@@ -75,7 +75,7 @@ function App() {
 				</Switch>
 			</ThemeProvider>
 		</Fragment>
-	);
+	)
 }
 
-export default App;
+export default App
